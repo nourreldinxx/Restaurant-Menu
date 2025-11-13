@@ -48,6 +48,10 @@ header ul li{
     padding: 12px 16px;
 
 }
+header ul li a{
+    text-decoration: none;
+    color: #474747;
+}
 header ul li:hover{
     background: #DBDFD0;
     border-radius: 34px;
@@ -62,7 +66,7 @@ main{
 .main-photo{
     width: 100%;
     height:800px ;
-    background-image: url("images/main-photo.png");
+    background-image: url("../images/main-photo.png");
     background-size: cover;
     background-position: center;
 
@@ -156,6 +160,10 @@ section h1{
     border-radius: 50px;
     font-size: 20px;
     font-weight: 500;
+}
+.about-us button:hover{
+    background: #414536;
+    color: #fff;
 }
 .event h1{
     align-self: flex-start;
