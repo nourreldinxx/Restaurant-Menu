@@ -210,6 +210,12 @@ section h1{
     align-items: center;
     gap: 20px;
 }
+.reviewer img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 footer{
     display: flex;
     flex-direction: column;
