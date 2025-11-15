@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="routes">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Menu</a></li>
+            <li><a href="menu.html">Menu</a></li>
             <li><a href="about.html">About Us</a></li>
         </ul>
     </div>
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3>Pages</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Menu</a></li>
+                <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </div>
