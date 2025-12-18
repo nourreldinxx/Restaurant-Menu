@@ -253,6 +253,13 @@ footer{
     gap: 10px;
     align-items: baseline;
 }
+.footer-logo img {
+    width: 80px;
+    height: auto;
+}
+.footer-logo h1 {
+    font-size: 30px;
+}
 .footer-p{
     color: #ADB29E;
 }
