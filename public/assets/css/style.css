@@ -198,8 +198,11 @@ section h1{
     padding: 100px;
 }
 .review-card-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    width: 100%;
+    max-width: 1400px;
 }
 .review-card{
     background: #F9F9F7;
