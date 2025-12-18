@@ -233,20 +233,20 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     background: #474747;
     color: white;
 }
 .footer-links{
     display: flex;
     gap: 30%;
-    padding: 100px 80px;
+    padding: 50px 80px 30px 80px;
     font-size: 14px;
 }
 .footer-links-and-logo{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 .footer-logo {
     display: flex;
@@ -274,12 +274,12 @@ footer{
 .pages-footer{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 15px;
 }
 .pages-footer ul{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 15px;
     list-style: none;
 }
 .pages-footer ul li a{
@@ -287,7 +287,7 @@ footer{
     text-decoration: none;
 }
 .footer-info{
-    padding-bottom:50px;
+    padding-bottom: 25px;
     margin-top: auto;
     align-self: center;
 
