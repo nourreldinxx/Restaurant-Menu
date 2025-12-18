@@ -151,6 +151,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="review-card">
+
+                    <h2>"One of a kind restaurant"</h2>
+                    <p>The culinary experience at place is first <br>
+                        to none. The atmosphere is vibrant, the <br>
+                        food - nothing short of extraordinary. The <br>
+                        food was the highlight of our evening. <br>
+                        Highly recommended.</p>
+                    <hr>
+                    <div class="reviewer">
+                        <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
+                        <div class="reviewer-info">
+                            <h3>Menna</h3>
+                            <span>Tehuacán, Pue.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
