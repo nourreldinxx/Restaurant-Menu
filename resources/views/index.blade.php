@@ -175,6 +175,23 @@
                     </div>
                 </div>
             </div>
+            <div class="review-card">
+
+                <h2>"Absolutely amazing experience"</h2>
+                <p>I had the most wonderful time at place. The <br>
+                    service was impeccable, and every dish was <br>
+                    a masterpiece. The attention to detail and <br>
+                    the warm hospitality made our visit truly <br>
+                    special. Will definitely be back!</p>
+                <hr>
+                <div class="reviewer">
+                    <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
+                    <div class="reviewer-info">
+                        <h3>Menna</h3>
+                        <span>Giza, Egypt</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
