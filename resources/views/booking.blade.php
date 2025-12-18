@@ -25,7 +25,7 @@
     <form method="POST" action="{{ route('booking.store') }}" class="booking-container">
         @csrf
         @if(session('success'))
-            <div style="background: #4CAF50; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+            <div style="background: #4CAF50; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px; flex-shrink: 0;">
                 {{ session('success') }}
             </div>
         @endif
@@ -87,6 +87,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="row">
             <button type="submit" class="booking-button">Book Table</button>
         </div>

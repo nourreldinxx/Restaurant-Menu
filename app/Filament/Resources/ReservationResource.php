@@ -31,8 +31,7 @@ class ReservationResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone')
                     ->required()
-                    ->tel()
-                    ->maxLength(20),
+                    ->maxLength(30),
                 Forms\Components\DatePicker::make('date')
                     ->required(),
                 Forms\Components\TextInput::make('time')
