@@ -42,23 +42,14 @@ class ReservationAccepted extends Mailable
         // Generate QR code URL
         $manageUrl = config('app.url') . route('reservation.manage', ['code' => $this->reservation->reservation_code], false);
         
-        // Generate QR code as PNG base64
-        try {
-            $qrCodeImage = \SimpleSoftwareIO\QrCode\Facades\QrCode::size(200)
-                ->format('png')
-                ->errorCorrection('H')
-                ->generate($manageUrl);
-            
-            $qrCodeBase64 = base64_encode($qrCodeImage);
-        } catch (\Exception $e) {
-            \Log::error('Failed to generate QR code: ' . $e->getMessage());
-            $qrCodeBase64 = null;
-        }
+        // Use external API to generate QR code (no extensions needed, works in all email clients)
+        // Using api.qrserver.com - free, reliable, and works in Gmail
+        $qrCodeUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' . urlencode($manageUrl);
 
         return new Content(
             view: 'emails.reservation-accepted',
             with: [
-                'qrCode' => $qrCodeBase64,
+                'qrCodeUrl' => $qrCodeUrl,
             ],
         );
     }

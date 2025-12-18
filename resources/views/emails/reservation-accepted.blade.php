@@ -29,11 +29,7 @@
             <h3 style="color: #2C2F24; margin-top: 0;">Your QR Code</h3>
             <p style="margin-bottom: 15px;">Please present this QR code when you arrive:</p>
             <div style="background: white; padding: 20px; display: inline-block; border-radius: 8px;">
-                @if($qrCode)
-                    <img src="data:image/png;base64,{{ $qrCode }}" alt="QR Code for {{ $reservation->reservation_code }}" style="max-width: 200px; width: 200px; height: 200px; display: block; margin: 0 auto;">
-                @else
-                    <p style="color: #666; margin: 0;">QR Code unavailable</p>
-                @endif
+                <img src="{{ $qrCodeUrl }}" alt="QR Code for {{ $reservation->reservation_code }}" style="max-width: 200px; width: 200px; height: 200px; display: block; margin: 0 auto;">
             </div>
             <p style="margin-top: 15px; font-size: 14px; color: #666;">Reservation Code: <strong>{{ $reservation->reservation_code }}</strong></p>
         </div>
