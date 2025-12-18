@@ -23,17 +23,23 @@
             
             <div class="menu-filters">
                 <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="breakfast">Breakfast</button>
-                <button class="filter-btn" data-category="main-dish">Main Dishes</button>
-                <button class="filter-btn" data-category="drinks">Drinks</button>
-                <button class="filter-btn" data-category="desserts">Desserts</button>
+                @php
+                    $categories = \App\Models\Category::all();
+                @endphp
+                @foreach($categories as $category)
+                <button class="filter-btn" data-category="{{ $category->id }}">{{ $category->name }}</button>
+                @endforeach
             </div>
 
             <div class="menu-items-grid">
                 @forelse($menuItems as $item)
-                <div class="menu-item" data-category="{{ $item->category }}">
+                <div class="menu-item" data-category="{{ $item->category_id ?? 'all' }}">
                     <div class="menu-item-image">
-                        <img src="{{ $item->image ?: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&h=300&fit=crop' }}" alt="{{ $item->name }}">
+                        @if($item->image_path)
+                            <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->name }}">
+                        @else
+                            <img src="{{ asset('assets/images/mainlogo.png') }}" alt="{{ $item->name }}">
+                        @endif
                     </div>
                     <div class="menu-item-content">
                         <span class="menu-price">${{ number_format($item->price, 2) }}</span>

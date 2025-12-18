@@ -14,7 +14,7 @@ class PageController extends Controller
 
     public function menu()
     {
-        $menuItems = MenuItem::all();
+        $menuItems = MenuItem::with('category')->get();
         return view('menu', compact('menuItems'));
     }
 

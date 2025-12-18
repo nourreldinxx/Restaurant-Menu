@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\MenuItemResource\Pages\ManageMenuItems;
+use App\Models\Category;
 use App\Models\MenuItem;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -37,18 +38,30 @@ class MenuItemResource extends Resource
                     ->numeric()
                     ->prefix('$')
                     ->step(0.01),
-                Forms\Components\Select::make('category')
+                Forms\Components\Select::make('category_id')
+                    ->label('Category')
                     ->required()
-                    ->options([
-                        'breakfast' => 'Breakfast',
-                        'main-dish' => 'Main Dishes',
-                        'drinks' => 'Drinks',
-                        'desserts' => 'Desserts',
-                    ]),
-                Forms\Components\TextInput::make('image')
-                    ->label('Image URL')
-                    ->url()
-                    ->maxLength(255),
+                    ->relationship('category', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(Category::class, 'name'),
+                    ])
+                    ->createOptionUsing(function (array $data): int {
+                        return Category::create($data)->id;
+                    }),
+                Forms\Components\FileUpload::make('image_path')
+                    ->label('Image')
+                    ->image()
+                    ->disk('public')
+                    ->directory('menu-items')
+                    ->visibility('public')
+                    ->imageEditor()
+                    ->maxSize(5120)
+                    ->helperText('Upload an image file (max 5MB)'),
             ]);
     }
 
@@ -56,17 +69,18 @@ class MenuItemResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image_path')
+                    ->label('Image')
+                    ->circular()
+                    ->defaultImageUrl(url('/assets/images/mainlogo.png')),
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('category')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('category.name')
+                    ->label('Category')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'breakfast' => 'warning',
-                        'main-dish' => 'danger',
-                        'drinks' => 'info',
-                        'desserts' => 'success',
-                        default => 'gray',
-                    }),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('price')
                     ->money('USD')
                     ->sortable(),
@@ -80,13 +94,11 @@ class MenuItemResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make('category')
-                    ->options([
-                        'breakfast' => 'Breakfast',
-                        'main-dish' => 'Main Dishes',
-                        'drinks' => 'Drinks',
-                        'desserts' => 'Desserts',
-                    ]),
+                Tables\Filters\SelectFilter::make('category_id')
+                    ->label('Category')
+                    ->relationship('category', 'name')
+                    ->searchable()
+                    ->preload(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
