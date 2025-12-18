@@ -209,6 +209,23 @@
                     </div>
                 </div>
             </div>
+            <div class="review-card">
+
+                <h2>"Outstanding quality and service"</h2>
+                <p>This place has become my favorite dining <br>
+                    destination. The menu offers incredible <br>
+                    variety, and every dish I've tried has been <br>
+                    exceptional. The team truly understands <br>
+                    what makes a memorable dining experience.</p>
+                <hr>
+                <div class="reviewer">
+                    <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
+                    <div class="reviewer-info">
+                        <h3>Besan</h3>
+                        <span>Giza, Egypt</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
