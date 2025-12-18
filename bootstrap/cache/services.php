@@ -43,7 +43,8 @@
     39 => 'Termwind\\Laravel\\TermwindServiceProvider',
     40 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
     41 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
-    42 => 'App\\Providers\\Filament\\AdminPanelProvider',
+    42 => 'Spatie\\MediaLibrary\\MediaLibraryServiceProvider',
+    43 => 'App\\Providers\\Filament\\AdminPanelProvider',
   ),
   'eager' => 
   array (
@@ -74,7 +75,8 @@
     24 => 'Termwind\\Laravel\\TermwindServiceProvider',
     25 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
     26 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
-    27 => 'App\\Providers\\Filament\\AdminPanelProvider',
+    27 => 'Spatie\\MediaLibrary\\MediaLibraryServiceProvider',
+    28 => 'App\\Providers\\Filament\\AdminPanelProvider',
   ),
   'deferred' => 
   array (

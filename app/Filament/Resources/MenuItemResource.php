@@ -53,15 +53,19 @@ class MenuItemResource extends Resource
                     ->createOptionUsing(function (array $data): int {
                         return Category::create($data)->id;
                     }),
-                Forms\Components\FileUpload::make('image_path')
+                Forms\Components\FileUpload::make('image')
                     ->label('Image')
                     ->image()
                     ->disk('public')
                     ->directory('menu-items')
                     ->visibility('public')
                     ->imageEditor()
-                    ->maxSize(5120)
-                    ->helperText('Upload an image file (max 5MB)'),
+                    ->helperText('Upload an image file (max 5MB)')
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/webp'])
+                    ->rules([
+                        'image',
+                        'max:5120', // 5MB in KB
+                    ]),
             ]);
     }
 
@@ -69,8 +73,11 @@ class MenuItemResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_path')
+                Tables\Columns\ImageColumn::make('image')
                     ->label('Image')
+                    ->getStateUsing(function ($record) {
+                        return $record->getFirstMediaUrl('image') ?: null;
+                    })
                     ->circular()
                     ->defaultImageUrl(url('/assets/images/mainlogo.png')),
                 Tables\Columns\TextColumn::make('name')
@@ -101,7 +108,73 @@ class MenuItemResource extends Resource
                     ->preload(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->mutateFormDataUsing(function (array $data, MenuItem $record): array {
+                        \Log::info('EditAction - mutateFormDataUsing', ['record_id' => $record->id, 'data_keys' => array_keys($data), 'image' => $data['image'] ?? null]);
+                        
+                        // Load existing image URL
+                        $media = $record->getFirstMedia('image');
+                        if ($media && !isset($data['image'])) {
+                            $data['image'] = $media->getUrl();
+                            \Log::info('EditAction - Loaded existing image URL', ['url' => $data['image']]);
+                        }
+                        
+                        // Handle new upload
+                        if (isset($data['image']) && $data['image']) {
+                            $imagePath = is_array($data['image']) ? $data['image'][0] : $data['image'];
+                            \Log::info('EditAction - Image path extracted', ['path' => $imagePath]);
+                            
+                            unset($data['image']);
+                            $data['_image_path'] = $imagePath;
+                        }
+                        return $data;
+                    })
+                    ->using(function (array $data, MenuItem $record): MenuItem {
+                        \Log::info('EditAction - using', ['record_id' => $record->id, 'data_keys' => array_keys($data), 'image_path' => $data['_image_path'] ?? null]);
+                        
+                        $record->update($data);
+                        \Log::info('EditAction - Record updated', ['record_id' => $record->id]);
+                        
+                        if (isset($data['_image_path']) && $data['_image_path']) {
+                            try {
+                                $imagePath = $data['_image_path'];
+                                \Log::info('EditAction - Processing image', ['path' => $imagePath]);
+                                
+                                $record->clearMediaCollection('image');
+                                \Log::info('EditAction - Cleared existing media collection');
+                                
+                                // Check if file exists in public disk
+                                if (\Illuminate\Support\Facades\Storage::disk('public')->exists($imagePath)) {
+                                    \Log::info('EditAction - File exists in public disk', ['path' => $imagePath]);
+                                    $record->addMediaFromDisk($imagePath, 'public')->toMediaCollection('image');
+                                    \Log::info('EditAction - Media added from disk successfully');
+                                } else {
+                                    \Log::warning('EditAction - File not found in public disk', ['path' => $imagePath]);
+                                    
+                                    // Try with full path
+                                    $fullPath = \Illuminate\Support\Facades\Storage::disk('public')->path($imagePath);
+                                    \Log::info('EditAction - Trying full path', ['full_path' => $fullPath, 'exists' => file_exists($fullPath)]);
+                                    
+                                    if (file_exists($fullPath)) {
+                                        $record->addMedia($fullPath)->toMediaCollection('image');
+                                        \Log::info('EditAction - Media added from full path successfully');
+                                    } else {
+                                        \Log::error('EditAction - File not found anywhere', ['path' => $imagePath, 'full_path' => $fullPath]);
+                                    }
+                                }
+                            } catch (\Exception $e) {
+                                \Log::error('EditAction - Failed to add media', [
+                                    'message' => $e->getMessage(),
+                                    'trace' => $e->getTraceAsString(),
+                                    'path' => $data['_image_path'] ?? null
+                                ]);
+                            }
+                        } else {
+                            \Log::info('EditAction - No image path provided');
+                        }
+                        
+                        return $record;
+                    }),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([

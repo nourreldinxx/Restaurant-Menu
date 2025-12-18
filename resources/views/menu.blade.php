@@ -35,8 +35,11 @@
                 @forelse($menuItems as $item)
                 <div class="menu-item" data-category="{{ $item->category_id ?? 'all' }}">
                     <div class="menu-item-image">
-                        @if($item->image_path)
-                            <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->name }}">
+                        @php
+                            $imageUrl = $item->getFirstMediaUrl('image');
+                        @endphp
+                        @if($imageUrl)
+                            <img src="{{ $imageUrl }}" alt="{{ $item->name }}">
                         @else
                             <img src="{{ asset('assets/images/mainlogo.png') }}" alt="{{ $item->name }}">
                         @endif
