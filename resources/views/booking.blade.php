@@ -42,6 +42,12 @@
                     <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input">
+                    <input type="email" id="email" name="email" placeholder="Enter your email address">
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="form-group">

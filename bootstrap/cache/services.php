@@ -42,7 +42,8 @@
     38 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     39 => 'Termwind\\Laravel\\TermwindServiceProvider',
     40 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
-    41 => 'App\\Providers\\Filament\\AdminPanelProvider',
+    41 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
+    42 => 'App\\Providers\\Filament\\AdminPanelProvider',
   ),
   'eager' => 
   array (
@@ -72,7 +73,8 @@
     23 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     24 => 'Termwind\\Laravel\\TermwindServiceProvider',
     25 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
-    26 => 'App\\Providers\\Filament\\AdminPanelProvider',
+    26 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
+    27 => 'App\\Providers\\Filament\\AdminPanelProvider',
   ),
   'deferred' => 
   array (

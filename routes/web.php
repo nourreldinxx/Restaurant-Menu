@@ -13,3 +13,8 @@ Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
 
 // Booking Form Submission
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+
+// Reservation Management (Public)
+Route::get('/reservation/{code}', [App\Http\Controllers\ReservationManageController::class, 'show'])->name('reservation.manage');
+Route::post('/reservation/{code}/update', [App\Http\Controllers\ReservationManageController::class, 'update'])->name('reservation.update');
+Route::post('/reservation/{code}/cancel', [App\Http\Controllers\ReservationManageController::class, 'cancel'])->name('reservation.cancel');
