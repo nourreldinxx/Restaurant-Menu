@@ -114,7 +114,7 @@
                         <img src="{{ asset('assets/images/nasser.png') }}" alt="">
                         <div class="reviewer-info">
                             <h3>Nasser</h3>
-                            <span>San Pedro Cholula</span>
+                            <span>Giza, Egypt</span>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <img src="{{ asset('assets/images/nour.png') }}" alt="">
                         <div class="reviewer-info">
                             <h3>Nour</h3>
-                            <span>Puebla, Pue.</span>
+                            <span>Giza, Egypt</span>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                         <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
                         <div class="reviewer-info">
                             <h3>Ekhlas</h3>
-                            <span>Tehuacán, Pue.</span>
+                            <span>Giza, Egypt</span>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
 
                     <h2>"Absolutely amazing experience"</h2>
                     <p>This restaurant has become my favorite place. 
-                        The menu provides incredible selection, and 
+                        The menu provides incredible selection, and
                         every meal I've enjoyed has been outstanding. 
                         The staff truly knows what creates an 
                         unforgettable dining experience.
@@ -164,29 +164,29 @@
                         <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
                         <div class="reviewer-info">
                             <h3>Menna</h3>
-                            <span>Tehuacán, Pue.</span>
+                            <span>Giza, Egypt</span>
                         </div>
                     </div>
                 </div>
                 <div class="review-card">
-
+    
                     <h2>"Exceptional dining experience"</h2>
-                    <p>This venue has become my preferred dining <br>
-                        spot. The menu presents incredible options, and <br>
-                        every course I've sampled has been remarkable. <br>
-                        The team truly grasps what builds a <br>
-                        memorable dining experience.</p>
+                    <p>This venue has become my preferred dining 
+                        spot. The menu presents incredible options, and 
+                        every course I've sampled has been remarkable. 
+                        The team truly grasps what builds a 
+                        memorable dining experience.
                     <hr>
                     <div class="reviewer">
                         <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
                         <div class="reviewer-info">
                             <h3>Alromisa</h3>
-                            <span>Tehuacán, Pue.</span>
+                            <span>Giza, Egypt</span>
                         </div>
                     </div>
                 </div>
                 <div class="review-card">
-
+    
                     <h2>"Outstanding quality and service"</h2>
                     <p>This place has become my favorite dining <br>
                         destination. The menu offers incredible <br>
@@ -198,11 +198,11 @@
                         <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
                         <div class="reviewer-info">
                             <h3>Besan</h3>
-                            <span>Tehuacán, Pue.</span>
+                            <span>Giza, Egypt</span>
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
         </div>
     </section>
     @include('components.footer')
