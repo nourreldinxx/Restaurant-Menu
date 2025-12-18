@@ -153,12 +153,12 @@
                 </div>
                 <div class="review-card">
 
-                    <h2>"One of a kind restaurant"</h2>
-                    <p>The culinary experience at place is first <br>
-                        to none. The atmosphere is vibrant, the <br>
-                        food - nothing short of extraordinary. The <br>
-                        food was the highlight of our evening. <br>
-                        Highly recommended.</p>
+                    <h2>"Absolutely amazing experience"</h2>
+                    <p>I had the most wonderful time at place. The <br>
+                        service was impeccable, and every dish was <br>
+                        a masterpiece. The attention to detail and <br>
+                        the warm hospitality made our visit truly <br>
+                        special. Will definitely be back!</p>
                     <hr>
                     <div class="reviewer">
                         <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
