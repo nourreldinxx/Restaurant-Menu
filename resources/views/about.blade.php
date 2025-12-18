@@ -168,6 +168,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="review-card">
+
+                    <h2>"Exceptional dining experience"</h2>
+                    <p>What an incredible restaurant! Every visit <br>
+                        feels like a celebration. The flavors are <br>
+                        perfectly balanced, the presentation is <br>
+                        stunning, and the staff goes above and <br>
+                        beyond to ensure perfection.</p>
+                    <hr>
+                    <div class="reviewer">
+                        <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
+                        <div class="reviewer-info">
+                            <h3>Alromisa</h3>
+                            <span>Tehuacán, Pue.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
