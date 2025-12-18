@@ -178,11 +178,11 @@
             <div class="review-card">
 
                 <h2>"Absolutely amazing experience"</h2>
-                <p>I had the most wonderful time at place. The <br>
-                    service was impeccable, and every dish was <br>
-                    a masterpiece. The attention to detail and <br>
-                    the warm hospitality made our visit truly <br>
-                    special. Will definitely be back!</p>
+                <p>This restaurant has become my favorite place. 
+                    The menu provides incredible selection, and
+                    every meal I've enjoyed has been outstanding. 
+                    The staff truly knows what creates an 
+                    unforgettable dining experience.
                 <hr>
                 <div class="reviewer">
                     <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
@@ -195,11 +195,11 @@
             <div class="review-card">
 
                 <h2>"Exceptional dining experience"</h2>
-                <p>What an incredible restaurant! Every visit <br>
-                    feels like a celebration. The flavors are <br>
-                    perfectly balanced, the presentation is <br>
-                    stunning, and the staff goes above and <br>
-                    beyond to ensure perfection.</p>
+                <p>This venue has become my preferred dining 
+                    spot. The menu presents incredible options, and 
+                    every course I've sampled has been remarkable. 
+                    The team truly grasps what builds a 
+                    memorable dining experience.
                 <hr>
                 <div class="reviewer">
                     <img src="{{ asset('assets/images/ekhlas.png') }}" alt="">
