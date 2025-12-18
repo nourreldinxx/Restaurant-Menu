@@ -2,7 +2,7 @@
     <div class="footer-links">
         <div class="footer-links-and-logo">
             <div class="footer-logo">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="">
+                <img src="{{ asset('assets/images/mainlogo.png') }}" alt="">
                 <h1>Restaurant Menu</h1>
             </div>
             <p class="footer-p">
