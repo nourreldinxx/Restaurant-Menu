@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet">
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+</head>
+<body>
+@include('components.topbar')
+@include('components.header')
+<main>
+    <div class="contacts-back">
+        <h1>Contact Us</h1>
+        <p>We consider all the drivers of change gives you the components <br>
+            you need to change to create a truly happens.</p>
+    </div>
+    <img class="contacts-image" src="{{ asset('assets/images/img.png') }}" alt="">
+
+    <div class="contacts-container">
+        <div class="row">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <div class="input">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="input">
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <div class="input">
+                    <input type="text" id="subject" name="name" placeholder="write a subject" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="message">Message </label>
+                <div class="input">
+                    <textarea name="textarea" id="message" cols="30" rows="4" placeholder="write your message"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="contact-button">Send the message</button>
+        </div>
+    </div>
+</main>
+@include('components.footer')
+</body>
+</html>
