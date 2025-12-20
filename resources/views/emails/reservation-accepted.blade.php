@@ -8,7 +8,7 @@
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
     <div style="background: #F9F9F7; padding: 30px; border-radius: 10px;">
         <div style="text-align: center; margin-bottom: 30px;">
-            <img src="https://postimg.cc/nX6kTw60" alt="Restaurant Logo" style="max-width: 180px; height: auto;">
+            <img src="https://i.postimg.cc/433SfDwk/mainlogo.png" alt="Restaurant Logo" style="max-width: 180px; height: auto;">
         </div>
         <h1 style="color: #27ae60; text-align: center; margin-bottom: 30px;">Reservation Confirmed!</h1>
         
