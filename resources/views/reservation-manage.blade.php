@@ -88,7 +88,7 @@
             </form>
             @elseif($reservation->status === 'confirmed')
             <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; color: #27ae60;">
-                <p style="margin: 0;"><strong>✓ Reservation Confirmed</strong></p>
+                <p style="margin: 0;"><strong>Reservation Confirmed</strong></p>
                 <p style="margin: 10px 0 0 0;">Your reservation has been confirmed and cannot be modified. Please contact us if you need to make any changes.</p>
             </div>
             @else
