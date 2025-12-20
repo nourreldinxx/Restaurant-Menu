@@ -69,21 +69,21 @@ Restaurant-Menu/
 - **Reservation Management** (`/reservation/{code}`) - Public reservation management page
 
 ## Features
-- ✅ **Responsive Design** - Mobile-first, modern UI
-- ✅ **Menu Management** - Dynamic menu items with categories
-- ✅ **Table Reservations** - Online booking system with email confirmations
-- ✅ **Reservation Management** - Customers can view, update, or cancel reservations using unique codes
-- ✅ **Admin Dashboard** - Filament admin panel for managing menu items, categories, and reservations
-- ✅ **Email Notifications** - Automated emails for reservation confirmations, acceptances, and rejections
-- ✅ **QR Code Generation** - QR codes for reservations
-- ✅ **Media Library** - Image upload and management for menu items
-- ✅ **Component-Based Structure** - Reusable Blade components (header, footer, topbar)
-- ✅ **Modern UI** - Google Fonts & Font Awesome icons
+- **Responsive Design** - Mobile-first, modern UI
+- **Menu Management** - Dynamic menu items with categories
+- **Table Reservations** - Online booking system with email confirmations
+- **Reservation Management** - Customers can view, update, or cancel reservations using unique codes
+- **Admin Dashboard** - Filament admin panel for managing menu items, categories, and reservations
+- **Email Notifications** - Automated emails for reservation confirmations, acceptances, and rejections
+- **QR Code Generation** - QR codes for reservations
+- **Media Library** - Image upload and management for menu items
+- **Component-Based Structure** - Reusable Blade components (header, footer, topbar)
+- **Modern UI** - Google Fonts & Font Awesome icons
 
 ## Tech Stack
 - **Backend**: Laravel 12, PHP 8.2+
 - **Admin Panel**: Filament 3.2
-- **Database**: MySQL/PostgreSQL/SQLite
+- **Database**: MySQL
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Libraries**:
   - Spatie Media Library (image management)
@@ -95,14 +95,13 @@ Restaurant-Menu/
 ### Prerequisites
 - PHP 8.2 or higher
 - Composer
-- Node.js & NPM (if using frontend build tools)
-- Database (MySQL, PostgreSQL, or SQLite)
+- Database (MySQL)
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/nourreldinxx/Restaurant-Menu
    cd Restaurant-Menu
    ```
 
@@ -197,5 +196,3 @@ Access the Filament admin panel at `/admin` to:
 - `reservations` - Table reservations
 - `media` - Media library for images
 
-## License
-MIT
