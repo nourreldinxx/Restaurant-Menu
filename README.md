@@ -101,7 +101,7 @@ Restaurant-Menu/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/nourreldinxx/Restaurant-Menu
    cd Restaurant-Menu
    ```
 
